@@ -157,6 +157,11 @@ cor.test(btps_total, ars_total)
 cor.wt(total_scores)
 cor.wt(factored_total)
 cor_mat(factored_total)
+
+flcas_cor <- cor_mat(flcas_rep)
+cor_mark_significant(flcas_cor)
+cor_mat(btps_rep)
+cor_mat(ars_rep)
 #####plot correlation data#####
 #plot with p-value
 chart.Correlation(total_scores)
@@ -193,7 +198,7 @@ ggpairs(factored_total,
         upper = list(continuous = my_fn),
         lower = list(continuous = wrap("smooth", alpha = 0.7, size=0.7)),
         title = "Correlation of FLCAS, ARS-30, and BTPS by age group",
-        legend = legend_age) + theme(legend.position = "bottom", legend.)
+        legend = legend_age) + theme(legend.position = "bottom")
 
 #####CFL and structural regression#####
 flcas_factor <- "CA_LSC =~ FLCAS_1 + FLCAS_2 + FLCAS_3 + FLCAS_4+ FLCAS_6+ FLCAS_7+ FLCAS_9+ FLCAS_10+ FLCAS_11 + FLCAS_12+ FLCAS_15+ FLCAS_16+ FLCAS_18+ FLCAS_19+ FLCAS_20
@@ -275,13 +280,6 @@ graph_sem(struct_mod_res)
 
 #validate model 
 cv.lm(regression, m=3)
-
-flcas_cor <- cor_mat(flcas_rep)
-cor_mark_significant(flcas_cor)
-cor_mat(btps_rep)
-cor_mat(ars_rep)
-
-
 
 
 ######plot function#####
