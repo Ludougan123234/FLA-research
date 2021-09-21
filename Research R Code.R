@@ -162,7 +162,7 @@ flcas_cor <- cor_mat(flcas_rep)
 cor_mark_significant(flcas_cor)
 cor_mat(btps_rep)
 cor_mat(ars_rep)
-#####plot correlation data#####
+#####correlation plots#####
 #plot with p-value
 chart.Correlation(total_scores)
 #plot with no p-value
