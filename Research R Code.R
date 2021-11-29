@@ -315,6 +315,7 @@ printVar = function(x,y){
 
 
 # Anti-image correlation matrix diagonals - should be > 0.5
+# reference: Pain relief factor analysis by Vyomesh Upadhyay (http://rstudio-pubs-static.s3.amazonaws.com/431371_31351b773b114c83961ae812bad3dfd1.html)
 antimg <- function(x){
   X <- cor(x) 
   iX <- ginv(X) # generalized inverse of a matrix
