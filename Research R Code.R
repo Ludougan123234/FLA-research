@@ -25,9 +25,9 @@ btps_rep <- surv_dat[, c(40:52)]
 
 #####Cronbach's alpha#####
 # calculate cronbach's alpha of the three questionnaires
-cronbach.alpha(flcas_rep) # = 0.955
-cronbach.alpha(ars_rep)  # = 0.876
-cronbach.alpha(btps_rep) # = 0.827
+cronbach.alpha(flcas_rep) 
+cronbach.alpha(ars_rep) 
+cronbach.alpha(btps_rep)
 
 #####factor analysis prep#####
 # Preparation of factor analysis - calculate KMO index of sampling adequacy, bartlett's sphericity
