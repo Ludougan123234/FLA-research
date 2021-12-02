@@ -333,4 +333,5 @@ antimg <- function(x){
   print(diag(AIR), row.names = FALSE)
 }
 
+# correlation matrix
 totcor <- cor_mat(factored_total)
