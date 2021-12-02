@@ -288,7 +288,7 @@ cv.lm(regression, m=3)
 
 
 ######plot function#####
-# these functions are referenced from online sources
+# reference: https://stackoverflow.com/q/61686171 (answer contributed by StupidWolf)
 my_fn <- function(data, mapping, ...){
   # takes in x and y for each panel
   xData <- eval_data_col(data, mapping$x)
