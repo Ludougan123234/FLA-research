@@ -3,8 +3,8 @@ getwd()
 setwd("#MY/WORKING/DIRECTORY#")
 
 ##### Install necessary packages#####
-packages <- c("ltm", "lavaan", "tidySEM", "psych", "pastecs", "ggplot2", "ggpubr", "GGally", "rstatix", "corrplot", "PerframnceAnalytics",
-              "Hmisc", "nFactors", "paran", "dplyr", "DAAG", "ggiraphExtra")
+packages <- c("ltm", "lavaan", "tidySEM", "psych", "pastecs", "ggplot2", "ggpubr", "GGally", "rstatix", "corrplot", "PerformanceAnalytics",
+              "Hmisc", "nFactors", "paran", "dplyr", "DAAG", "ggiraphExtra", "REdaS")
 installed_packages <- packages %in% rownames(installed.packages())
 if(any(installed_packages = FALSE)){
   install.packages(packages[!installed_packages])
@@ -34,6 +34,9 @@ cronbach.alpha(btps_rep)
 KMO(ars_rep)
 KMO(btps_rep)
 KMO(flcas_rep)
+bart_test(flcas_rep)
+bart_test(ars_rep) 
+bart_test(btps_rep) 
 antimg(ars_rep)
 antimg(btps_rep)
 antimg(flcas_rep)
