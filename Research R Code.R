@@ -40,7 +40,8 @@ antimg(flcas_rep)
 
 
 #####factor analysis flcas#####
-# all three questionnaires go through eigenvalue calculation and parallel analysis to determine the number of factors to be retained, 
+# all three questionnaires go through eigenvalue calculation and parallel analysis to determine the number of factors to be retained
+# reference: https://towardsdatascience.com/exploratory-factor-analysis-in-r-e31b0015f224
 ev <- eigen(cor(flcas_rep))
 ap <- parallel(subject = nrow(flcas_rep), var = ncol(flcas_rep), rep = 100, cent = 0.05)
 ns <- nScree(x = ev$values, aparallel = ap$eigen$qevpea)
@@ -201,6 +202,7 @@ ggpairs(factored_total,
         legend = legend_age) + theme(legend.position = "bottom")
 
 #####CFL and structural regression#####
+# reference: https://stats.idre.ucla.edu/r/seminars/rcfa/
 flcas_factor <- "CA_LSC =~ FLCAS_1 + FLCAS_2 + FLCAS_3 + FLCAS_4+ FLCAS_6+ FLCAS_7+ FLCAS_9+ FLCAS_10+ FLCAS_11 + FLCAS_12+ FLCAS_15+ FLCAS_16+ FLCAS_18+ FLCAS_19+ FLCAS_20
 NATEC =~ FLCAS_5+ FLCAS_8+ FLCAS_13+ FLCAS_14+ FLCAS_17"
 flcas_cfa <- cfa(flcas_factor, data = flcas_rep)
